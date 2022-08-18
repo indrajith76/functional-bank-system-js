@@ -2,6 +2,11 @@ document.getElementById('btn-deposit').addEventListener('click',function() {
     // get newDeposit amount using function
     const newDepositAmount = getInputFieldValueById('deposit-field');
     
+    if(isNaN(newDepositAmount) || newDepositAmount < 0){
+        alert('enter valid number');
+        return;
+    }
+    
     // get previous deposit total using function
     const previousDepositTotal = getTextElementValueById('deposit-total');
 
